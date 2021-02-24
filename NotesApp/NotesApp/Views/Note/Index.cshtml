@@ -1,0 +1,32 @@
+﻿@model List<NoteDetailsViewModel>
+
+
+<h2>List of notes:</h2>
+<div>
+    <button type="button" class="btn btn-outline-success"><a asp-controller="Note" asp-action="CreateNote">Create Note</a></button>
+</div>
+@foreach (NoteDetailsViewModel note in @Model)
+{
+<ul>
+    <li>Title: @note.Title</li>
+    <li>Content: @note.Content</li>
+    <li>Writer: @note.WriterFullName</li>
+
+    <li>
+        <button type="button" class="btn btn-outline-primary btn-sm">
+            <a asp-controller="Note" asp-action="Details" asp-route-id="@note.Id">See Details</a>
+        </button>
+    </li>
+    <li>
+        <button type="button" class="btn btn-outline-primary btn-sm">
+            <a asp-controller="Note" asp-action="EditNote" asp-route-id="@note.Id">Edit Note</a>
+        </button>
+    </li>
+    <li>
+        <button type="button" class="btn btn-outline-danger btn-sm">
+            <a asp-controller="Note" asp-action="DeleteNote" asp-route-id="@note.Id">Delete Note</a>
+        </button>
+    </li>
+</ul>
+                <hr />
+}

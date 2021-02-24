@@ -1,0 +1,17 @@
+﻿@model NoteDetailsViewModel
+
+<h2>Delete Note</h2>
+<h3>Are you sure you want to delete the following note:</h3>
+<ul>
+    <li>Title: @Model.Title</li>
+    <li>Content: @Model.Content</li>
+    <li>Writer: @Model.WriterFullName</li>
+</ul>
+
+<form asp-action="DeleteNotePost">
+    <input type="hidden" asp-for="Id" />    
+        <input type="submit" value="Delete" />
+        <div>
+            <a asp-action="Index">Cancel</a>
+        </div>
+</form>

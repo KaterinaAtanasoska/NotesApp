@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
+    <ProjectReference Include="..\NotesApp.Mappers\NotesApp.Mappers.csproj" />
+    <ProjectReference Include="..\NotesApp.ViewModels\NotesApp.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

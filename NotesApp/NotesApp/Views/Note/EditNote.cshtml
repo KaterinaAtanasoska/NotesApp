@@ -1,0 +1,26 @@
+﻿@model NoteViewModel
+
+<h2>Edit Note</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditNotePost" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="WriterId" class="control-label"></label>
+                <select asp-for="WriterId" asp-items="@(new SelectList(ViewBag.Writers, "Id", "WriterFullName"))"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input type="text" asp-for="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input type="text" asp-for="Content" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Edit</button>
+            <div>
+                <a asp-action="Index" asp-controller="Note">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
